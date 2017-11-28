@@ -1,0 +1,30 @@
+/**
+ * 不写类名或ID名不受css modules影响
+ * 基本样式
+ */ 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * a 标签基本样式
+ */
+a {
+    cursor: pointer;
+    text-decoration: none;
+    &:link {
+        color: black;
+    }
+    &:active {
+        color: red;
+    }
+    &:visited {
+        color: purple;
+    }
+    &:hover {
+        color: blue;
+    }
+}
+

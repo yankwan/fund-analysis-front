@@ -1,0 +1,17 @@
+/**
+ * 变量库
+ */
+@import 'utils/variables.scss';
+
+:global {
+    /**
+     * 组件
+     */
+    @import 'components/nav.scss';
+    @import 'components/header.scss';
+
+    /**
+     * 基本样式
+     */
+    @import 'layout/basic.scss';
+}

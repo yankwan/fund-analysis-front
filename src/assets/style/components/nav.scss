@@ -1,0 +1,14 @@
+.navigation {
+    margin: 0 auto;
+    width: 960px;
+    text-align: center;
+    ul {
+        list-style-type: none;
+        display: inline-block;
+        li {
+            margin-right: 2rem;
+            float: left;
+        }
+    }
+    
+}
