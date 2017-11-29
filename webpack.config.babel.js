@@ -47,8 +47,8 @@ export default {
                 ]
             },
             { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports-loader?jQuery=jquery' },
-            { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000&name=fonts/[name].[ext]' },
-            { test: /\.(ttf|eot)$/, loader: 'file-loader?name=fonts/[name].[ext]' }
+            { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000&name=[name].[ext]' },
+            { test: /\.(ttf|eot)$/, loader: 'file-loader?name=[name].[ext]' }
         ]
     },
     devServer: {
@@ -65,7 +65,7 @@ export default {
             template: path.resolve(__dirname, './src/script/index.html')
         }),
         new ExtractTextPlugin({
-            filename: 'css/[name].css',
+            filename: '[name].css',
             disable: false,
             allChunks: true
         }),
@@ -73,8 +73,8 @@ export default {
         new webpack.optimize.CommonsChunkPlugin({
             name: ["vendor", "manifest"]
         }),
-        new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
-            analyzerMode: 'static'
-        })
+        // new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
+        //     analyzerMode: 'static'
+        // })
     ]
 }

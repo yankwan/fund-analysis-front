@@ -1,14 +1,61 @@
-<div class="{{vm.style.list}}">
-    <p class="{{vm.style.title}}">This is artical list page. This is artical list page. This is  This is artical list page. This is artical list page.artical list page. This is artical list page. This is artical list page.</p>
-    <ul class="{{vm.style.item}}">
-        <li><a><span>1.</span>item1 item1 item1 item1 item1 item1 item1 item1 item1</a></li>
-        <li><a><span>2.</span>item2 item2 item2 item2 item2 item2 item2 item2 item2</a></li>
-        <li><a><span>3.</span>item3 item3 item3 item3 item3 item3 item3 item3 item3</a></li>
-        <li><a><span>4.</span>item4 item4 item4 item4 item4 item4 item4 item4 item4</a></li>
-        <li><a><span>5.</span>item4 item4 item4 item4 item4 item4 item4 item4 item4</a></li>
-    </ul>
-    <div class="{{vm.style.btnGroup}}">
-        <button class="btn btn-default">Default</span>
-        <button class="btn btn-primary">Primary</span>
+<div class="container">
+    <div class="row" >
+        <div  class="col-md-6 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="dropdown">
+                        已买入基金
+                        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+                                data-toggle="dropdown">
+                            选择Eda计划
+                            <span class="caret"></span>
+                        </button>
+                        <button type="button" class="btn btn-primary">确定</button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">Java</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th>基金代码</th>
+                            <th>买入净值</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><input type="text" class="form-control" placeholder="请输入基金代码"></td>
+                            <td><input type="text" class="form-control" placeholder="请输入买入净值"></td>
+                            <td><button type="button" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </td>
+                            <td><button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+        <div  class="col-md-6 col-sm-6">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut. 
+            </p>
+        </div>
     </div>
 </div>
