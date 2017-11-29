@@ -3,18 +3,23 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
 
 export default {
-    entry: './src/script/index.js',
+    entry: {
+        vendor: ['angular'],
+        bootstrap: 'bootstrap-loader/extractStyles',  
+        app: './src/script/index.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].[chunkhash].js'
     },
     devtool: 'source-map',
     module: {
         rules: [
             { 
-                test: /\.(css|scss)$/, 
+                test: /\.scss$/, 
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     // 使用css modules
@@ -25,25 +30,13 @@ export default {
                                 localIdentName: '[local]--[hash:base64:5]',
                                 sourceMap: true
                             }
-                        }, {
-                            loader: 'postcss-loader', // Run post css actions
-                                  options: {
-                                    plugins: function () { // post css plugins, can be exported to postcss.config.js
-                                        return [
-                                            require('precss'),
-                                            require('autoprefixer')
-                                        ];
-                                    }
-                                }
-                        }, {
-                            loader: "sass-loader"
-                        }]
+                        }, 'sass-loader']
                   })
             },// ['style-loader', 'css-loader', 'sass-loader']
             { 
                 test: /\.js$/, 
                 exclude: /node_modules/, 
-                use: ['ng-annotate-loader','babel-loader']
+                use: ['ng-annotate-loader','babel-loader?cacheDirectory=true']
             },
             {
                 test: /\.html$/,
@@ -53,7 +46,9 @@ export default {
                     { loader: 'html-loader' }
                 ]
             },
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+            { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports-loader?jQuery=jquery' },
+            { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000&name=fonts/[name].[ext]' },
+            { test: /\.(ttf|eot)$/, loader: 'file-loader?name=fonts/[name].[ext]' }
         ]
     },
     devServer: {
@@ -67,23 +62,19 @@ export default {
             },
             inject: 'body',
             hash: true,
-            template: path.resolve(__dirname, './src/script/index.html'),
-            extraFiles: {
-                css: './node_modules/bootstrap/dist/css/bootstrap.min.css'
-            }
+            template: path.resolve(__dirname, './src/script/index.html')
         }),
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: 'css/[name].css',
             disable: false,
             allChunks: true
         }),
         new UglifyJsPlugin(),
-
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            'window.jQuery': "jquery",
-            Popper: ['popper.js', 'default']
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ["vendor", "manifest"]
+        }),
+        new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
+            analyzerMode: 'static'
         })
     ]
 }

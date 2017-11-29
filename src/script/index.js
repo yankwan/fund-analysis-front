@@ -1,9 +1,8 @@
 import angular from 'angular';
 import uirouter from '@uirouter/angularjs';
-// import 'bootstrap';
 
-// import bootstrap
 import '../assets/style/index.scss';
+
 
 const app = angular.module('demo-app', [uirouter]);
 
