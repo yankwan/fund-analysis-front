@@ -1,61 +1,184 @@
 <div class="container">
     <div class="row" >
-        <div  class="col-md-6 col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="dropdown">
-                        已买入基金
-                        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
-                                data-toggle="dropdown">
-                            选择Eda计划
-                            <span class="caret"></span>
-                        </button>
-                        <button type="button" class="btn btn-primary">确定</button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="#">Java</a>
-                            </li>
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="{{vm.style.fundSection}}">
+                <h4 class="{{vm.style.elemInline}}">已买入计划内部分：</h4>
+                <div class="dropdown {{vm.style.elemInline}}">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+                            data-toggle="dropdown">
+                        选择Eda计划
+                        <span class="caret"></span>
+                    </button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">Java</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                            <th>基金代码</th>
-                            <th>买入净值</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td><input type="text" class="form-control" placeholder="请输入基金代码"></td>
-                            <td><input type="text" class="form-control" placeholder="请输入买入净值"></td>
-                            <td><button type="button" class="btn btn-primary">
-                                <span class="glyphicon glyphicon-plus"></span>
-                                </button>
-                            </td>
-                            <td><button type="button" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-minus"></span>
-                                </button>
-                            </td>
-                            </tr>
-                        </tbody>
-                        </table>
+            </div>
+            <div class="{{vm.style.fundList}}">
+                <div class="form-group {{vm.style.fundGroup}}">
+                    <p class="fund-title text-justify">
+                        <label class="{{vm.style.fundName}}">中证环保 
+                            <span>(000671)</span>
+                            <span class="{{vm.style.avgNet}}">平均净值：1.678</span>
+                        </label>
+                    </p>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>       
+                </div>
+                <div class="form-group {{vm.style.fundGroup}}">
+                    <p class="fund-title text-justify">
+                        <label class="{{vm.style.fundName}}">中证环保 
+                            <span>(000671)</span>
+                            <span class="{{vm.style.avgNet}}">平均净值：1.678</span>
+                        </label>
+                    </p>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div  class="col-md-6 col-sm-6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-            eiusmod tempor incididunt ut. 
-            </p>
+        <div class="col-md-6 col-sm-6">
+            <div class="{{vm.style.fundSection}}">
+                <h4 class="{{vm.style.elemInline}}">已卖出计划内部分：</h4>
+                <div class="dropdown {{vm.style.elemInline}}">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+                            data-toggle="dropdown">
+                        选择Eda计划
+                        <span class="caret"></span>
+                    </button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">Java</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="{{vm.style.fundList}}">
+                <div class="form-group {{vm.style.fundGroup}}">
+                    <p class="fund-title text-justify">
+                        <label class="{{vm.style.fundName}}">中证环保 
+                            <span>(000671)</span>
+                            <span class="{{vm.style.avgNet}}">平均净值：1.678</span>
+                        </label>
+                    </p>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>       
+                </div>
+                <div class="form-group {{vm.style.fundGroup}}">
+                    <p class="fund-title text-justify">
+                        <label class="{{vm.style.fundName}}">中证环保 
+                            <span>(000671)</span>
+                            <span class="{{vm.style.avgNet}}">平均净值：1.678</span>
+                        </label>
+                    </p>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>
+                    <div class="form-inline {{vm.style.fundUnit}}">
+                        <div class="form-group">
+                            <label for="buyNet">1. 买入净值：</label>
+                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                        </div>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <hr>
+
+    <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+    </footer>
 </div>

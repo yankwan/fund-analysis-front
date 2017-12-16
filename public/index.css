@@ -1,7 +1,30 @@
-.buySection .buyFund {
-    display: inline-block;
-}
+.elem-inline {
+  display: inline-block; }
 
-.buySection .edaChoose {
-    display: inline-block;
-}
+.elem-block {
+  display: block; }
+
+.fund-section {
+  margin-bottom: 10px; }
+  .fund-section h4 {
+    font-weight: bold; }
+
+.fund-list .fund-group {
+  padding: 12px;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px; }
+  .fund-list .fund-group .fund-name {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: gray; }
+    .fund-list .fund-group .fund-name span {
+      font-size: 0.8em;
+      color: black; }
+    .fund-list .fund-group .fund-name .avg-net {
+      color: brown;
+      margin-left: 20px; }
+  .fund-list .fund-group .fund-unit {
+    margin-left: 15px;
+    padding: 5px; }
+
+/*# sourceMappingURL=index.css.map */

@@ -28,7 +28,8 @@ export default {
                             options: {
                                 modules: true,
                                 localIdentName: '[local]--[hash:base64:5]',
-                                sourceMap: true
+                                sourceMap: true,
+                                camelCase: true
                             }
                         }, 'sass-loader']
                   })
