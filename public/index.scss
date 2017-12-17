@@ -31,6 +31,45 @@
         .fund-unit {
             margin-left: 15px;
             padding: 5px;
+
+            .buyNum {
+                display: inline-block;
+                input {
+                    width: auto;
+                    max-width: 4em;
+                }
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .select-options {
+                display: inline-block;
+                a {
+                    color: black;
+                }
+                a:before {
+                    margin-left: 12px;
+                    display: inline-block;
+                    font-size: 1.5rem;;
+                    width: 1.95rem;
+                    text-align: center;
+                    vertical-align: middle;
+                    border-radius: 50%;
+                    letter-spacing: normal;
+                }
+                .add:before {
+                    content:'✚';
+                    color: white;
+                    background: #337ab7;
+                }
+                .delete::before {
+                    margin-left: .3rem;
+                    content: '✖';
+                    color: white;
+                    background: #d9534f;
+                }
+            }
         }
     }
 }

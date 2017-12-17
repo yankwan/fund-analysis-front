@@ -4,13 +4,13 @@
             <div class="{{vm.style.fundSection}}">
                 <h4 class="{{vm.style.elemInline}}">已买入计划内部分：</h4>
                 <div class="dropdown {{vm.style.elemInline}}">
-                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
-                            data-toggle="dropdown">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu" 
+                            data-toggle="dropdown" ng-click="vm.loadEdaFundList()">
                         选择Eda计划
                         <span class="caret"></span>
                     </button>
-                    <button type="button" class="btn btn-primary">确定</button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <button type="button" class="btn btn-primary btn-sm" >确定</button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="#">Java</a>
                         </li>
@@ -31,14 +31,15 @@
                     <div class="form-inline {{vm.style.fundUnit}}">
                         <div class="form-group">
                             <label for="buyNet">1. 买入净值：</label>
-                            <input type="text" class="form-control" id="buyNet" placeholder="买入净值">
+                            <input type="text" class="form-control input-sm" id="buyNet" placeholder="买入净值">
+                            <div class="{{vm.style.buyNum}}">
+                                <input type="text" class="form-control input-sm" placeholder="100"> <span>份</span>
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
+                        <div class="{{vm.style.selectOptions}}">
+                            <a class="{{vm.style.add}}" href="#"></a>
+                            <a class="{{vm.style.delete}}" href="#"></a>
+                        </div>
                     </div>
                     <div class="form-inline {{vm.style.fundUnit}}">
                         <div class="form-group">
