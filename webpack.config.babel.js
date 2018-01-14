@@ -5,6 +5,9 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
 
+const isProd = process.env.NODE_ENV === 'production';
+console.log("process.env.NODE_ENV is %s",process.env.NODE_ENV);
+
 export default {
     entry: {
         vendor: ['angular'],
@@ -53,7 +56,15 @@ export default {
         ]
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        proxy: {
+            "/api/*": {
+                target: 'http://localhost:3000',
+                pathRewrite: {"^/api" : ""},
+                secure: false,
+                changeOrigin: true
+            }
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -77,5 +88,10 @@ export default {
         // new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
         //     analyzerMode: 'static'
         // })
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production') // default value if not specified
+            }
+        })
     ]
 }

@@ -4,6 +4,7 @@
 
 import listTemplate from './list.view.html';
 import listCtrl from './list.controller.js';
+import listService from './list.service.js';
 
 const app = angular.module('demo-app')
     .config(($stateProvider, $urlRouterProvider) => {
@@ -17,5 +18,6 @@ const app = angular.module('demo-app')
 
         $urlRouterProvider.otherwise('/list');
     })
+    .service('ListService', listService);
 
 export default app.name;

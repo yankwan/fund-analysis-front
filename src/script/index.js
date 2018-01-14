@@ -3,8 +3,9 @@ import uirouter from '@uirouter/angularjs';
 
 import '../assets/style/index.scss';
 
-
-const app = angular.module('demo-app', [uirouter]);
+import query_helper from './../script/utils/query_helper.service.js';
+const app = angular.module('demo-app', [uirouter])
+    .service('QueryHelper', query_helper);
 
 /**
  * require.context();
@@ -26,3 +27,6 @@ modules.keys().forEach(modules);
  */
 let components = require.context('./../script/components/', true, /\.index.js$/);
 components.keys().forEach(components);
+
+// let utils = require.context('./../script/utils/', true, /\.index.js$/);
+// components.keys().forEach(utils);
